@@ -371,3 +371,14 @@
     if ('IntersectionObserver' in window) new IntersectionObserver(function (es) { if (!started) return; runner.enabled = es[0].isIntersecting; }).observe(box);
   }
 })();
+
+/* diagrams: stagger children as they reveal */
+(function () {
+  document.querySelectorAll('.dg').forEach(function (d) {
+    var kids = d.querySelectorAll('.node, .link, .brief > div, .lane, .tl-pt');
+    kids.forEach(function (k, i) {
+      if (k.classList.contains('lane')) { k.querySelectorAll('.sm-card').forEach(function (c, j) { c.style.transitionDelay = (i * 120 + j * 70) + 'ms'; }); }
+      else k.style.transitionDelay = (i * 90) + 'ms';
+    });
+  });
+})();

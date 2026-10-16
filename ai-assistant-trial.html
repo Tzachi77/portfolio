@@ -13,7 +13,7 @@
   <div class="hero">
     <div class="kicker"><span class="label">Case 03 / 04</span><span class="label">Centrical · AI Assistant · B2B2C</span><span class="label">2025</span></div>
     <h1>Designing a free trial for users who can't buy</h1>
-    <p class="lede">Centrical's AI Assistant was a paid add-on for team leaders. But team leaders couldn't buy it: the purchase was an organization decision. I designed a 30-day trial that hooks the team leader and, at the same time, proves the value to the people who sign the budget.</p>
+    <p class="lede">Centrical's AI Assistant was a paid add-on for team leaders, but team leaders couldn't buy it: purchasing was an organization decision. I designed a 30-day trial that hooks team leaders and proves the value to the people who sign the budget.</p>
     <dl class="facts">
       <div><dt class="label">Role</dt><dd>Product designer and project owner</dd></div>
       <div><dt class="label">Product</dt><dd>AI Assistant, a paid add-on</dd></div>
@@ -26,12 +26,12 @@
   <section aria-labelledby="ch">
     <div class="sec-head"><span class="label">01 · The challenge</span><h2 id="ch" class="col">The user and the buyer are different people</h2></div>
     <div class="prose col">
-      <p>Centrical's AI Assistant helps team leaders analyze their team's KPIs and get recommendations. The goal was to grow its adoption. Enterprise customers were hesitant to pay for an AI tool before they had seen what it does for their teams.</p>
-      <p>The obvious fix was a free trial, but a standard trial would not work here. A team leader can't purchase on their own. The decision sits with admins and upper management, who never use the assistant themselves. If only the team leader saw the value, the trial would end with a happy user and no sale.</p>
+      <p>Centrical's AI Assistant helps team leaders analyze their team's KPIs and get recommendations. The goal was to grow adoption, but enterprise customers hesitated to pay for an AI tool before seeing what it does for their teams.</p>
+      <p>A free trial was the obvious fix, but a standard one wouldn't work. Team leaders can't purchase: admins and upper management decide, and they never use the assistant. If only the team leader saw the value, the trial would end with a happy user and no sale.</p>
     </div>
     <div class="outcomes">
-      <div><span class="label">Business goal</span><p>Increase ARR by turning the AI Assistant add-on into a product organizations choose to pay for.</p></div>
-      <div><span class="label">User goal</span><p>Team leaders need to see real value quickly, inside the work they already do.</p></div>
+      <div><span class="label">Business goal</span><p>Grow ARR by making the AI Assistant an add-on organizations choose to pay for.</p></div>
+      <div><span class="label">User goal</span><p>Team leaders need real value quickly, inside their daily work.</p></div>
       <div><span class="label">Buyer goal</span><p>Admins and budget owners need evidence: who used it, how much, and what it changed.</p></div>
     </div>
   </section>
@@ -42,17 +42,17 @@
     <div class="two">
       <div class="prose col">
         <ul class="plain">
-          <li>Ran the discovery with stakeholders: who it's for, why now, and how we propose to solve it.</li>
+          <li>Ran discovery with stakeholders: who it's for, why now, and how to solve it.</li>
           <li>Designed two flows: the team leader flow and the admin flow.</li>
-          <li>Planned the trial week by week, from first login to the extension or purchase.</li>
+          <li>Planned the trial week by week, from first login to extension or purchase.</li>
           <li>Designed the final UI inside the existing Centrical product.</li>
         </ul>
-        <p>I owned the project from discovery to final design, working with the PM, the developers and the rest of the product team. It was my final project at Centrical.</p>
+        <p>I owned the project from discovery to final design, working with the PM, developers and the product team. It was my final project at Centrical.</p>
       </div>
       <aside class="rail">
-        <div><b>Constraint</b>System admins open the trial on the account, and that requires legal approval.</div>
-        <div><b>Constraint</b>Admins configure it per group. Customers often roll it out gradually, to specific departments.</div>
-        <div><b>Constraint</b>Each user can experience the trial only once, and Centrical's team must be able to extend or reset it.</div>
+        <div><b>Constraint</b>System admins open the trial on the account, which needs legal approval.</div>
+        <div><b>Constraint</b>Admins configure it per group, and customers often roll it out to specific departments first.</div>
+        <div><b>Constraint</b>Each user gets the trial once; Centrical's team can extend or reset it.</div>
       </aside>
     </div>
   </section>
@@ -61,29 +61,87 @@
   <section aria-labelledby="think">
     <div class="sec-head"><span class="label">03 · The thinking</span><h2 id="think" class="col">Treat the trial as a sales tool, not a countdown</h2></div>
     <div class="prose col">
-      <p>I mapped the problem with stakeholders on three boards. The "who is this for" board made the split clear: team leaders are the key users, but admins configure the product, track its value and carry it to the budget owner.</p>
+      <p>I mapped the problem with stakeholders on three boards: who it's for, why now, and how we propose to solve it. The first board made the split clear. Team leaders are the key users, but admins configure the product, track its value and carry it to the budget owner.</p>
     </div>
-    <div class="grid2">
-      <figure>
-        <div class="frame"><img src="media/centrical/who.jpg" alt="Sticky notes: team leaders are the key users, sys admins open it on the account with legal approval, admins configure per group, admins and CS track the value, team leaders provide feedback"></div>
-        <figcaption><b>Who is this for?</b> One user, several decision makers.</figcaption>
-      </figure>
-      <figure>
-        <div class="frame"><img src="media/centrical/why-now.jpg" alt="Sticky notes: increase adoption of the paid add-on, get team leaders hooked, encourage admins to pressure the budget stakeholder, show usage and value to stakeholders, team leaders can't purchase on their own, goal: increase ARR, free trial is a sales tool"></div>
-        <figcaption><b>Why now?</b> The goal is ARR, and the trial is a sales tool.</figcaption>
-      </figure>
-    </div>
+
+    <figure class="dg">
+      <div class="chain" role="img" aria-label="Stakeholder map. The system admin opens the trial on the account after legal approval. The team leader uses the assistant and gives feedback. Admins and Customer Success configure it per group and track its value. The budget owner decides whether to pay. Team leaders cannot purchase on their own.">
+        <div class="node"><span class="tag">Gatekeeper</span><b>System admin</b><span>Opens the trial on the account, after legal approval</span></div>
+        <div class="link"><span>turns it on</span></div>
+        <div class="node user"><span class="tag">User</span><b>Team leader</b><span>The key user. Works with it daily and gives feedback</span></div>
+        <div class="link"><span>usage &amp; impact</span></div>
+        <div class="node"><span class="tag">Champions</span><b>Admins &amp; CS</b><span>Configure it per group and track its value</span></div>
+        <div class="link"><span>evidence</span></div>
+        <div class="node buyer"><span class="tag">Buyer</span><b>Budget owner</b><span>Decides whether to pay. Never uses it</span></div>
+      </div>
+      <div class="gap-note"><span class="label">The gap</span><p>The person who sees the value can't buy it. The trial has to carry that value all the way to the person who pays.</p></div>
+      <figcaption><b>Who is this for?</b> One user, several decision makers.</figcaption>
+    </figure>
+
+    <figure class="dg">
+      <div class="brief">
+        <div><span class="label">Goal</span><p>Grow ARR from the paid AI add-on</p></div>
+        <div><span class="label">Blocker</span><p>Team leaders can't purchase on their own</p></div>
+        <div class="hl"><span class="label">Insight</span><p>The free trial is a <mark>sales tool</mark>, not a countdown</p></div>
+      </div>
+      <figcaption><b>Why now?</b> The second board, reduced to the three lines that shaped everything after it.</figcaption>
+    </figure>
+
     <div class="prose col">
-      <p>That changed the design brief. The trial had to do two jobs at once:</p>
+      <p>So the trial had to do two jobs at once:</p>
       <ul class="plain">
-        <li><b>For team leaders:</b> full capabilities from day one, no gated features, and a clear sense of how much time is left, so they build a habit fast.</li>
-        <li><b>For admins:</b> visibility into who is using it and the impact on their teams' KPIs, plus reminders at 21, 14, 7, 3 and 1 day left, so the value reaches the budget owner before the trial ends.</li>
+        <li><b>For team leaders:</b> full capabilities from day one, nothing gated, and a clear view of time left, so they build a habit fast.</li>
+        <li><b>For admins:</b> who is using it and the impact on team KPIs, plus reminders as the trial runs down, so the value reaches the budget owner before it ends.</li>
       </ul>
-      <p>Other decisions came from the same board: after the trial ends, the assistant stays visible in a disabled state instead of disappearing, and the Centrical team can extend a trial when a deal needs more time.</p>
     </div>
-    <figure class="narrow">
-      <div class="frame"><img src="media/centrical/proposals.jpg" alt="Sticky notes of proposed solutions: 30-day free trial for team leaders, full capabilities, clear indication of time left, notifications to admins and team leaders at 21, 14, 7, 3 and 1 days, admins track license and impact, extension, disabled mode after trial, admin usage dashboard"></div>
-      <figcaption><b>How do we propose to solve it?</b> Ideas grouped into the team leader experience, the admin experience and the Centrical team's controls.</figcaption>
+
+    <figure class="dg">
+      <div class="smap">
+        <div class="lane">
+          <div class="lane-h"><span class="dot u"></span><b>Team leader experience</b></div>
+          <div class="sm-card">30 days free, full capabilities</div>
+          <div class="sm-card">Clear indicator of time left, on the home page and in the assistant</div>
+          <div class="sm-card">First-time user experience</div>
+          <div class="sm-card">Feedback beyond like and dislike, tracked by product</div>
+          <div class="sm-card">After the trial: a disabled state, not a disappearing feature</div>
+        </div>
+        <div class="lane">
+          <div class="lane-h"><span class="dot a"></span><b>Admin experience</b></div>
+          <div class="sm-card">Turn it on per group, once the AI addendum is signed</div>
+          <div class="sm-card">See licenses and who is on a trial</div>
+          <div class="sm-card">Track the impact on team leaders' KPIs</div>
+          <div class="sm-card">A usage dashboard to show value to stakeholders</div>
+          <div class="sm-card">Start trials for new groups and departments</div>
+        </div>
+        <div class="lane">
+          <div class="lane-h"><span class="dot c"></span><b>Centrical team controls</b></div>
+          <div class="sm-card">Extend a trial when a deal needs more time</div>
+          <div class="sm-card">Reset trial flags in tenant management</div>
+          <div class="sm-card">A license setting per user, with a days-left counter</div>
+          <div class="sm-card">A first-time experience flag for every new user</div>
+        </div>
+      </div>
+
+      <div class="tl" role="img" aria-label="Reminder timeline: email and in-app reminders to admins and team leaders at 21, 14, 7, 3 and 1 days left. At day 0 the trial ends and the assistant moves to a disabled state, or the trial is extended.">
+        <div class="tl-h"><span class="label">Reminder timeline</span><span class="label">Days left</span></div>
+        <div class="tl-track">
+          <div class="tl-bar"></div>
+          <div class="tl-pt start" style="--x:0%"><i></i><b>30</b><span>Trial starts</span></div>
+          <div class="tl-pt" style="--x:30%"><i></i><b>21</b><span>Reminder</span></div>
+          <div class="tl-pt" style="--x:53.33%"><i></i><b>14</b><span>Reminder</span></div>
+          <div class="tl-pt" style="--x:76.67%"><i></i><b>7</b><span>Final reminders</span></div>
+          <div class="tl-pt" style="--x:90%"><i></i><b>3</b></div>
+          <div class="tl-pt" style="--x:96.67%"><i></i><b>1</b></div>
+          <div class="tl-pt end" style="--x:100%"><i></i><b>0</b><span>Extend, buy, or disabled</span></div>
+        </div>
+        <p class="tl-note">Email and in-app reminders go to both admins and team leaders, so the people who decide hear about the value while there is still time to act.</p>
+      </div>
+      <figcaption><b>How do we propose to solve it?</b> The third board, grouped into the team leader experience, the admin experience and the Centrical team's controls.</figcaption>
+    </figure>
+
+    <figure class="narrow raw">
+      <div class="frame"><img src="media/centrical/proposals.jpg" alt="The original sticky-note board of proposed solutions from the stakeholder workshop"></div>
+      <figcaption><b>From the workshop.</b> The original board these diagrams come from.</figcaption>
     </figure>
   </section>
 
@@ -91,14 +149,14 @@
   <section aria-labelledby="sol">
     <div class="sec-head"><span class="label">04 · The solution</span><h2 id="sol" class="col">A 30-day journey with a plan for every week</h2></div>
     <div class="prose col">
-      <p>The experience principles were simple: reduce cognitive load, give value immediately, create a sense of progress, remove friction, and build confidence through guided exploration.</p>
+      <p>The principles: reduce cognitive load, give value immediately, show progress, remove friction, and build confidence through guided exploration.</p>
     </div>
 
     <figure>
       <div class="journey" role="img" aria-label="Trial flow: first login, then a welcome pop-up with video, then entering the AI Assistant, then daily engagement with a small persistent reminder and milestone moments on days 7, 14, 21 and 30, then first and last day notifications, then the post-trial extension flow">
         <div class="step"><span class="label">Day 1</span><b>First login</b><span>Welcome pop-up with a short video, then straight into the assistant</span></div>
         <div class="step"><span class="label">Daily</span><b>Engagement</b><span>A small persistent reminder shows the days left</span></div>
-        <div class="step"><span class="label">Days 7 · 14 · 21 · 30</span><b>Milestones</b><span>Special moments that highlight progress and value</span></div>
+        <div class="step"><span class="label">Days 7 · 14 · 21 · 30</span><b>Milestones</b><span>Moments that highlight progress and value</span></div>
         <div class="step"><span class="label">First and last day</span><b>Notifications</b><span>In the notification panel, easy to find again</span></div>
         <div class="step accent"><span class="label">Day 30</span><b>Extend or buy</b><span>Post-trial flow, with a 14-day extension</span></div>
       </div>
@@ -109,9 +167,9 @@
       <table>
         <thead><tr><th>Stage</th><th>What the team leader gets</th></tr></thead>
         <tbody>
-          <tr><td>Week 1 · Discovery</td><td>Onboarding checklist: connect data sources, first project, invite the team, a short tutorial. Daily nudges and quick wins.</td></tr>
-          <tr><td>Weeks 2–3 · Deep exploration</td><td>Advanced features introduced in context, usage-based recommendations, performance insights and comparisons.</td></tr>
-          <tr><td>Week 4 · Conversion</td><td>A proactive extension offer and usage-based qualification, with a clear path to purchase.</td></tr>
+          <tr><td>Week 1 · Discovery</td><td>Onboarding checklist (connect data, first project, invite the team, short tutorial), daily nudges and quick wins.</td></tr>
+          <tr><td>Weeks 2–3 · Deep exploration</td><td>Advanced features in context, usage-based recommendations and performance insights.</td></tr>
+          <tr><td>Week 4 · Conversion</td><td>A proactive extension offer and a clear path to purchase.</td></tr>
           <tr><td>Extension</td><td>14 more days, enhanced access, and a dedicated success consultation.</td></tr>
         </tbody>
       </table>
@@ -119,7 +177,7 @@
 
     <div class="prose col">
       <h3>Day 1: show the value in the first screen</h3>
-      <p>The trial opens with a personal welcome and a live example of the assistant summarizing the team's performance, so the first thing a team leader sees is an answer, not a feature list.</p>
+      <p>The trial opens with a personal welcome and a live example of the assistant summarizing team performance: the first thing a team leader sees is an answer, not a feature list.</p>
     </div>
     <figure>
       <div class="frame"><img src="media/centrical/trial-start.jpg" alt="AI Assistant trial welcome: Hi Jenifer, your AI Assistant free trial starts today, with an example of the assistant summarizing team performance"></div>
@@ -128,7 +186,7 @@
 
     <div class="prose col">
       <h3>Inside the daily work</h3>
-      <p>The assistant lives where team leaders already work: next to team performance data and on the home dashboard. A small persistent reminder keeps the time left visible without getting in the way.</p>
+      <p>The assistant lives where team leaders already work, next to team performance data and on the home dashboard. A small reminder keeps the time left visible without getting in the way.</p>
     </div>
     <div class="grid2">
       <figure>
@@ -142,7 +200,7 @@
     </div>
     <figure>
       <div class="frame"><img src="media/centrical/dashboard-reminder.jpg" alt="Centrical home dashboard with a small AI Assistant trial reminder in the corner"></div>
-      <figcaption><b>Daily engagement.</b> The home dashboard, with a small trial reminder and a days-left counter in the corner.</figcaption>
+      <figcaption><b>Daily engagement.</b> The home dashboard, with a days-left reminder in the corner.</figcaption>
     </figure>
   </section>
 
@@ -153,16 +211,16 @@
       <table>
         <thead><tr><th>Deliverable</th><th>For</th></tr></thead>
         <tbody>
-          <tr><td>A trial designed for two audiences: the team leaders who use it and the admins who buy it</td><td>Product and sales</td></tr>
+          <tr><td>A trial designed for two audiences: team leaders who use it and admins who buy it</td><td>Product and sales</td></tr>
           <tr><td>Two complete flows: the team leader flow and the admin flow</td><td>Development</td></tr>
           <tr><td>A week-by-week trial plan, from first login to extension or purchase</td><td>Product and Customer Success</td></tr>
-          <tr><td>Final UI inside the existing Centrical product, handed off to development</td><td>Development</td></tr>
+          <tr><td>Final UI in the existing product, handed off to development</td><td>Development</td></tr>
         </tbody>
       </table>
     </div>
     <div class="prose col">
       <h3>What I learned</h3>
-      <p>In B2B2C, the person who loves the product and the person who pays for it are different people. Designing only for the user creates fans, not customers. The trial worked as a design problem only once it served both.</p>
+      <p>In B2B2C, the person who loves the product and the person who pays for it are different. Designing only for the user creates fans, not customers. The trial worked only once it served both.</p>
     </div>
   </section>
 <nav class="pager" aria-label="More case studies"><a href="competitor-agent.html"><span class="label">← Previous · Revuze</span><b>An AI agent that turns social noise into a competitor brief</b></a><a class="next" href="kudo.html"><span class="label">Next · KUDO →</span><b>One interpretation experience, wherever the meeting happens</b></a></nav><footer class="foot"><span>Nitzan Levy · Lead Product Designer</span><span>Product images belong to their companies.</span></footer>

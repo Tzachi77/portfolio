@@ -26,15 +26,15 @@
   <section aria-labelledby="ch">
     <div class="sec-head"><span class="label">01 · The challenge</span><h2 id="ch" class="col">Three pain points, one root cause</h2></div>
     <div class="prose col">
-      <p>Revuze's product is dense: thousands of products, reviews, tickets and AI-generated insights on one screen. Static Figma prototypes could show what a feature looked like, but not how it behaved with real data. That gap showed up in three places.</p>
+      <p>Revuze's product is dense: thousands of products, reviews, tickets and AI insights on one screen. Static Figma prototypes showed how a feature looked, not how it behaved with real data. That gap showed up in three places.</p>
     </div>
     <div class="outcomes">
-      <div><span class="label">User research</span><p>Users reacted to click-through images, not to the feature. We could not see how they used filters, long lists or AI answers until after the feature was built.</p></div>
-      <div><span class="label">Client presentations</span><p>Sales and product needed to show clients new features before development, to validate them early. Figma frames were hard to present and easy to misread.</p></div>
-      <div><span class="label">Developer handoff</span><p>States, edge cases and data behavior lived in written specs. Developers filled the gaps themselves, and corrections came late, when they cost the most.</p></div>
+      <div><span class="label">User research</span><p>Users reacted to click-through images, not the feature. We couldn't see how they used filters, long lists or AI answers until it was built.</p></div>
+      <div><span class="label">Client presentations</span><p>Sales and product needed to show clients features before development. Figma frames were hard to present and easy to misread.</p></div>
+      <div><span class="label">Developer handoff</span><p>States, edge cases and data behavior lived in written specs. Developers filled the gaps, and corrections came late, when they cost most.</p></div>
     </div>
     <div class="prose col">
-      <p>Under all three sat the design system. It existed only as one very large Figma file, with no Storybook and no coded components. Developers rebuilt components from screenshots, and nothing tied a design to what Angular could actually render.</p>
+      <p>Under all three sat the design system: one very large Figma file, with no Storybook and no coded components. Developers rebuilt components from screenshots, and nothing tied a design to what Angular could render.</p>
     </div>
   </section>
 
@@ -52,9 +52,9 @@
         <p>I was the only designer at Revuze, working with product managers and R&amp;D leads.</p>
       </div>
       <aside class="rail">
-        <div><b>Constraint</b>The product is built in Angular. Anything I designed had to be buildable with its components.</div>
-        <div><b>Constraint</b>No extra engineering time. The solution had to come from design, not from a dev project.</div>
-        <div><b>Constraint</b>Internal and client-facing at once, so access had to stay limited to company accounts.</div>
+        <div><b>Constraint</b>The product is built in Angular, so every design had to be buildable with its components.</div>
+        <div><b>Constraint</b>No extra engineering time. The solution had to come from design.</div>
+        <div><b>Constraint</b>Internal and client-facing, so access stays limited to company accounts.</div>
       </aside>
     </div>
   </section>
@@ -63,22 +63,22 @@
   <section aria-labelledby="think">
     <div class="sec-head"><span class="label">03 · The thinking</span><h2 id="think" class="col">Why working prototypes, and why a coded system first</h2></div>
     <div class="prose col">
-      <p>I started building features with AI, using Claude connected to Figma through MCP. The first results were fast but inconsistent. Claude invented colors and spacing, and produced components our Angular app did not have. The prototypes looked right and could not be built as drawn.</p>
-      <p>That made the order of work clear. Before AI could build reliable prototypes, it needed rules. So the design system came first.</p>
+      <p>I started building features with Claude connected to Figma through MCP. The first results were fast but inconsistent: Claude invented colors, spacing and components our Angular app did not have. The prototypes looked right but could not be built as drawn.</p>
+      <p>Before AI could build reliable prototypes, it needed rules. So the design system came first.</p>
     </div>
     <div class="tbl-scroll">
       <table>
         <thead><tr><th>Option</th><th>Upside</th><th>Why I didn't stop there</th></tr></thead>
         <tbody>
-          <tr><td>Keep the Figma file, add documentation</td><td>No new tools</td><td>Still a picture of components. AI and developers still guess the behavior.</td></tr>
-          <tr><td>Storybook</td><td>Industry standard for coded components</td><td>Needs engineering time to set up and maintain, which we didn't have.</td></tr>
-          <tr><td>Figma prototypes only</td><td>Fast, familiar</td><td>Can't show real data, loading, staging or errors. Same gaps as before.</td></tr>
+          <tr><td>Keep the Figma file, add documentation</td><td>No new tools</td><td>Still a picture. AI and developers still guess the behavior.</td></tr>
+          <tr><td>Storybook</td><td>Industry standard for coded components</td><td>Needs engineering time we didn't have.</td></tr>
+          <tr><td>Figma prototypes only</td><td>Fast, familiar</td><td>Can't show real data, loading or errors.</td></tr>
           <tr><td><b>Coded design system + working prototypes</b></td><td>One source for AI, design and dev</td><td><b>Chosen.</b> Mirrors Angular's limits, so what AI builds is what dev can ship.</td></tr>
         </tbody>
       </table>
     </div>
     <div class="prose col">
-      <p>The key decision was to encode the restrictions of our system, not only its look. Each component exposes exactly the sizes, hierarchies and states the Angular component supports, and nothing else. When Claude builds a prototype, it can only use what exists.</p>
+      <p>The key decision was to encode the system's restrictions, not only its look. Each component exposes exactly the sizes, hierarchies and states the Angular component supports. Claude can only use what exists.</p>
     </div>
   </section>
 
@@ -88,7 +88,7 @@
 
     <div class="prose col">
       <h3>The Hubs Design System</h3>
-      <p>The Figma file became a living component site. Every component shows all its states and sizes, and an Angular tab holds the code developers copy into the app. The repo instructs Claude to use only these tokens and components. Repetitive Figma work is scripted too: a small plugin generates new Badge sizes from existing ones.</p>
+      <p>The Figma file became a living component site. Each component shows all its states and sizes, with an Angular tab of code developers copy into the app. The repo tells Claude to use only these tokens and components, and a small Figma plugin generates new Badge sizes from existing ones.</p>
     </div>
     <figure>
       <div class="frame"><video src="media/portal/ds.mp4" poster="media/portal/ds.jpg" autoplay muted loop playsinline preload="metadata" aria-label="Hubs Design System: button states, sizes, icon variants, Angular code, then Badge and Toggle"></video></div>
@@ -97,7 +97,7 @@
 
     <div class="prose col">
       <h3>The Prototype Portal</h3>
-      <p>Every feature is built with Claude on the design system and published to one internal site, behind company sign-in. Each prototype has a stable link and a live preview. Options for the same feature sit together in a folder.</p>
+      <p>Every feature is built with Claude on the design system and published to one internal site behind company sign-in, with a stable link and a live preview. Options for the same feature sit together in a folder.</p>
     </div>
     <figure>
       <div class="frame"><video src="media/portal/portal.mp4" poster="media/portal/portal.jpg" autoplay muted loop playsinline preload="metadata" aria-label="Prototype Portal: browsing prototypes, opening the Vee Chat folder of options, switching to table view"></video></div>
@@ -109,8 +109,8 @@
     <div class="prose col">
       <span class="label">User research</span>
       <h3>Alerts: testing showed the flow was too complex</h3>
-      <p>Alerts tell a brand when something changes, such as a spike in product defects. We tested the full setup flow with users as a working prototype, with real catalog data and AI pre-filling the settings.</p>
-      <p>Two things came out of testing. The flow had too many decisions, so I simplified it: AI pre-fills what it can, and the user confirms each answer with a chip. Users also hit edge cases we had not planned for, like adding the same email twice. Each one went into the spec before development started.</p>
+      <p>Alerts tell a brand when something changes, such as a spike in product defects. We tested the full setup flow as a working prototype, with real catalog data and AI pre-filling the settings.</p>
+      <p>Testing showed two things. The flow had too many decisions, so I simplified it: AI pre-fills what it can and the user confirms each answer with a chip. Users also hit edge cases we hadn't planned for, like adding the same email twice, and each went into the spec before development.</p>
     </div>
     <figure>
       <div class="frame"><video src="media/portal/alerts.mp4" poster="media/portal/alerts.jpg" autoplay muted loop playsinline preload="metadata" aria-label="Alerts prototype: pick product defects, AI pre-fills the setup, choose a product, set weekly cadence, review and create, alert is live"></video></div>
@@ -120,18 +120,18 @@
     <div class="prose col">
       <span class="label">Client presentations</span>
       <h3>QA tickets: client feedback revealed the real problem</h3>
-      <p>I presented the QA ticket flow to a few clients before development. They gave feedback based on their real tickets, which reshaped how ticket data is structured in the product.</p>
-      <p>They also told us what actually took most of their time: linking their products to the Revuze catalog. That feedback became the next feature.</p>
+      <p>I presented the QA ticket flow to a few clients before development. Their feedback, based on real tickets, reshaped how ticket data is structured.</p>
+      <p>They also told us what took most of their time: linking their products to the Revuze catalog. That became the next feature.</p>
     </div>
 
     <div class="prose col">
       <span class="label">Developer handoff</span>
       <h3>Product linking: the review changed the spec before any code</h3>
-      <p>Brands link their catalog to Revuze's, many products to many. Reviewing the prototype with engineering replaced pagination with infinite scroll and merged two views into one table. The handoff doc covers behavior only, records both changes, and tells developers to build against it.</p>
+      <p>Brands link their catalog to Revuze's, many products to many. Reviewing the prototype with engineering replaced pagination with infinite scroll and merged two views into one table. The handoff doc covers behavior only and records both changes.</p>
     </div>
     <figure>
       <div class="frame"><video src="media/portal/linking.mp4" poster="media/portal/linking.jpg" autoplay muted loop playsinline preload="metadata" aria-label="Product linking prototype: select a product, stage changes, unsaved-changes warning, save with unlink confirmation, changes saved"></video></div>
-      <figcaption><b>Product linking, as developers received it.</b> Staged changes, the unsaved-changes warning and the unlink confirmation are defined in the prototype, not left to interpretation.</figcaption>
+      <figcaption><b>Product linking, as developers received it.</b> Staged changes, the unsaved-changes warning and the unlink confirmation are all defined, not left to interpretation.</figcaption>
     </figure>
   </section>
 
@@ -145,7 +145,7 @@
           <tr><td><b>Alerts, the first feature built from a prototype: estimated at 2 weeks, delivered in 3 days</b></td><td>Actual delivery</td></tr>
           <tr><td><b>Up to 50% less development time</b> on prototype-led features</td><td>Estimate with the application team's lead developer</td></tr>
           <tr><td>A simpler alerts flow, with edge cases like duplicate emails specified before development</td><td>User testing on the prototype</td></tr>
-          <tr><td>Ticket data structure shaped by real client tickets, and product linking identified as clients' biggest time sink</td><td>Client sessions on the QA ticket flow</td></tr>
+          <tr><td>Ticket data shaped by real client tickets; product linking identified as clients' biggest time sink</td><td>Client sessions on the QA ticket flow</td></tr>
           <tr><td>Product linking spec simplified before development: infinite scroll, one table</td><td>Handoff doc</td></tr>
           <tr><td>The Figma file replaced by a coded system that AI and developers share. 38 prototypes, built by one designer</td><td>Hubs Design System v1.0, Prototype Portal</td></tr>
         </tbody>
@@ -153,7 +153,7 @@
     </div>
     <div class="prose col">
       <h3>What I learned</h3>
-      <p>AI made prototyping fast, but only rules made it reliable. And a working prototype did more than speed up handoff: it put real behavior in front of users and clients early enough for them to change what we built. The most valuable design work here was not a screen. It was defining what the system allows, so that people and AI build the same thing.</p>
+      <p>AI made prototyping fast, but only rules made it reliable. A working prototype also put real behavior in front of users and clients early enough to change what we built. The most valuable design work here wasn't a screen: it was defining what the system allows, so people and AI build the same thing.</p>
     </div>
   </section>
 
