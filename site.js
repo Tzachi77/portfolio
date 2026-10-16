@@ -26,7 +26,7 @@
   if (em) requestAnimationFrame(function () { requestAnimationFrame(function () { em.classList.add('on'); }); });
 
   /* ---------- scroll reveal ---------- */
-  var targets = document.querySelectorAll('.case, .about .sec-head, .principles li, section > .sec-head, section > figure, section > .grid2, section > .outcomes, section > .tbl-scroll, .pager, .ba');
+  var targets = document.querySelectorAll('.case, .stat, .reel, .about .sec-head, .principles li, section > .sec-head, section > figure, section > .grid2, section > .outcomes, section > .tbl-scroll, .pager, .ba');
   if ('IntersectionObserver' in window && !reduce) {
     var io = new IntersectionObserver(function (es) {
       es.forEach(function (e) { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
@@ -53,10 +53,10 @@
       card.addEventListener('mouseleave', function () { el.pause(); });
     } else {
       el = document.createElement('img'); el.src = src; el.alt = ''; el.loading = 'lazy';
-      var tag = kind === 'ba' ? mkTag('Before', 'After') : mkTag('Trial start', 'Daily use');
+      var tg = (th.getAttribute('data-tags') || 'Before|After').split('|'); var tag = mkTag(tg[0], tg[1]);
     }
     el.className = 'alt';
-    th.appendChild(el); th.appendChild(tag);
+    (th.querySelector('.scr') || th).appendChild(el); th.appendChild(tag);
   });
   function mkTag(b, a) { var s = document.createElement('span'); s.className = 'tag'; s.innerHTML = '<span class="b">' + b + '</span><span class="a">' + a + '</span>'; return s; }
 
@@ -288,9 +288,11 @@
     if (el.closest('.lb')) { label(''); cur.classList.add('link'); return; }
     if (el.closest('.case')) return label('View case');
     if (el.closest('.ba .stage')) return label('Compare');
+    if (el.closest('.hs')) { label(''); cur.classList.add('link'); return; }
     if (el.closest('.zoomable')) return label('Zoom');
     if (el.closest('#clarity')) return label('Stir');
     if (el.closest('.pit')) return label(document.querySelector('.pit.grab') ? 'Throw' : 'Drag');
+    if (el.closest('#reel')) return label('Showreel');
     if (el.closest('video')) return label('Live');
     label('');
     cur.classList.toggle('link', !!el.closest('a, button'));
@@ -380,5 +382,59 @@
       if (k.classList.contains('lane')) { k.querySelectorAll('.sm-card').forEach(function (c, j) { c.style.transitionDelay = (i * 120 + j * 70) + 'ms'; }); }
       else k.style.transitionDelay = (i * 90) + 'ms';
     });
+  });
+})();
+
+/* showreel: play when visible, pause when not; full-screen button */
+(function () {
+  var v = document.getElementById('reel'); if (!v) return;
+  var reduce = false; try { reduce = matchMedia('(prefers-reduced-motion: reduce)').matches; } catch (e) {}
+  if (!reduce && 'IntersectionObserver' in window) {
+    new IntersectionObserver(function (es) { if (es[0].isIntersecting) { var p = v.play(); if (p && p.catch) p.catch(function () {}); } else v.pause(); }, { threshold: .35 }).observe(v);
+  } else { v.controls = true; }
+  var b = document.querySelector('.reel-btn');
+  b.addEventListener('click', function () {
+    v.controls = true; v.currentTime = 0; var p = v.play(); if (p && p.catch) p.catch(function () {});
+    var fs = v.requestFullscreen || v.webkitRequestFullscreen || v.webkitEnterFullscreen;
+    if (fs) { try { fs.call(v); } catch (e) {} }
+  });
+  document.addEventListener('fullscreenchange', function () { if (!document.fullscreenElement) v.controls = false; });
+})();
+
+/* impact numbers: count up when the band scrolls into view */
+(function () {
+  var band = document.querySelector('.stats'); if (!band) return;
+  var reduce = false; try { reduce = matchMedia('(prefers-reduced-motion: reduce)').matches; } catch (e) {}
+  if (reduce || !('IntersectionObserver' in window)) return;
+  var els = band.querySelectorAll('[data-count]');
+  els.forEach(function (e) { e.textContent = '0'; });
+  var io = new IntersectionObserver(function (es) {
+    if (!es[0].isIntersecting) return; io.disconnect(); band.classList.add('counting');
+    els.forEach(function (e, k) {
+      var to = +e.getAttribute('data-count'), t0 = null, dur = 1300 + k * 150;
+      function step(t) { if (!t0) t0 = t; var p = Math.min(1, (t - t0) / dur), v = 1 - Math.pow(1 - p, 3); e.textContent = Math.round(to * v); if (p < 1) requestAnimationFrame(step); }
+      requestAnimationFrame(step);
+    });
+  }, { threshold: .4 });
+  io.observe(band);
+})();
+
+/* hotspots: tap to toggle, keep notes inside the frame, hint in caption */
+(function () {
+  document.querySelectorAll('.hs-wrap').forEach(function (fr) {
+    var cap = fr.closest('figure') && fr.closest('figure').querySelector('figcaption');
+    if (cap && !cap.querySelector('.hs-hint')) { var h = document.createElement('span'); h.className = 'hs-hint'; h.textContent = ' Hover or tap the numbered dots for notes.'; cap.appendChild(h); }
+    var spots = fr.querySelectorAll('.hs');
+    spots.forEach(function (s) {
+      var x = parseFloat(s.style.getPropertyValue('--x')), y = parseFloat(s.style.getPropertyValue('--y'));
+      if (y < 22) s.classList.add('low'); if (x > 72) s.classList.add('r'); if (x < 22) s.classList.add('l');
+      var b = s.querySelector('button');
+      b.addEventListener('click', function (e) {
+        e.stopPropagation(); var open = !s.classList.contains('open');
+        spots.forEach(function (o) { o.classList.remove('open'); o.querySelector('button').setAttribute('aria-expanded', 'false'); });
+        if (open) { s.classList.add('open'); b.setAttribute('aria-expanded', 'true'); }
+      });
+    });
+    document.addEventListener('click', function (e) { if (!fr.contains(e.target)) spots.forEach(function (o) { o.classList.remove('open'); }); });
   });
 })();
