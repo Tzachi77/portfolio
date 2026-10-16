@@ -1,0 +1,146 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Competitor social agent · Nitzan Levy</title>
+<meta name="description" content="Clients set up an agent in three steps. Every cycle, it sends a report that ends in what to do next, replacing reports users used to build by hand in slides.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="site.css">
+<script src="site.js" defer></script>
+</head><body>
+<div class="wrap">
+  <nav class="nav" aria-label="Main"><a class="home" href="index.html">Nitzan Levy<span class="long"> · Lead Product Designer</span></a><ul><li><a href="index.html#work" aria-current="page">Work</a></li><li><a href="resume.html">Resume</a></li></ul></nav>
+
+  <div class="hero">
+    <div class="kicker"><span class="label">Case 02 / 04</span><span class="label">Revuze · Vee Hive · AI agents</span><span class="label">2026</span></div>
+    <h1>An AI agent that turns social noise into a competitor brief</h1>
+    <p class="lede">Brands wanted to know what their competitors were doing on social, but the product had no report for it. Users built their own, by hand, in other tools. I designed an AI agent that clients set up in three steps. On every cycle, it sends a report that ends in what to do next.</p>
+    <dl class="facts">
+      <div><dt class="label">Role</dt><dd>Lead Product Designer. Designed the agent setup and the report</dd></div>
+      <div><dt class="label">Worked with</dt><dd>Product manager and R&amp;D. Sole designer</dd></div>
+      <div><dt class="label">Built with</dt><dd>Claude + Figma MCP, the Hubs Design System</dd></div>
+      <div><dt class="label">Status</dt><dd>Shipped in 2026</dd></div>
+    </dl>
+  </div>
+
+  <!-- 01 -->
+  <section aria-labelledby="ch">
+    <div class="sec-head"><span class="label">01 · The challenge</span><h2 id="ch" class="col">Competitor intelligence took too long to be useful</h2></div>
+    <div class="prose col">
+      <p>Revuze collects thousands of social posts across TikTok, Instagram, Facebook, YouTube and news. The data to answer "what are my competitors doing?" was already there, but there was no report in the product.</p>
+      <p>Users built their own. They gathered findings from the CI research canvas, then rebuilt them as a report in another tool, such as PowerPoint, Google Slides or whatever their organization used. Every cycle meant the same manual work, the result lived outside Revuze, and by the time it was ready the moment it described had often passed.</p>
+    </div>
+    <div class="outcomes">
+      <div><span class="label">Business goal</span><p>Move Revuze from a data platform clients explore to an AI that works for them, and keeps them coming back every cycle.</p></div>
+      <div><span class="label">User goal</span><p>Brand and marketing teams want to know what competitors did, what worked, and what they should do about it.</p></div>
+      <div><span class="label">Design goal</span><p>Make creating an agent as easy as setting an alert, and make its output something a team can act on, not just read.</p></div>
+    </div>
+  </section>
+
+  <!-- 02 -->
+  <section aria-labelledby="role">
+    <div class="sec-head"><span class="label">02 · My role</span><h2 id="role" class="col">Two halves of one experience</h2></div>
+    <div class="two">
+      <div class="prose col">
+        <ul class="plain">
+          <li>Designed the agent setup flow in Vee Hive, Revuze's agent platform.</li>
+          <li>Designed the report template the agent fills on every run.</li>
+          <li>Built both as working prototypes with Claude on the Hubs Design System, so the setup and the report could be reviewed with real data before development.</li>
+        </ul>
+        <p>I was the only designer at Revuze, working with the product manager and R&amp;D.</p>
+      </div>
+      <aside class="rail">
+        <div><b>Constraint</b>Setup must work for marketing teams, not analysts. No queries, no filters to learn.</div>
+        <div><b>Constraint</b>The report is written by AI, every cycle, for any category. The template has to hold up whatever the data says.</div>
+        <div><b>Constraint</b>Built with existing Hubs components, so the agent fits the rest of the product.</div>
+      </aside>
+    </div>
+  </section>
+
+  <!-- 03 -->
+  <section aria-labelledby="think">
+    <div class="sec-head"><span class="label">03 · The thinking</span><h2 id="think" class="col">Easy to start, worth opening</h2></div>
+    <div class="prose col">
+      <h3>Setup: as simple as an alert</h3>
+      <p>The main decision was to make creating an agent super easy and straightforward. An agent sounds complex, so the setup could not feel like configuring one. I reused the pattern clients already knew from Alerts: a short, guided flow in three steps, scope, cadence, then review and approve.</p>
+      <p>I also limited the choices on purpose. Clients can track up to three competitor brands. More brands meant more combinations to set up and a report too diluted to read, so the limit keeps both the setup and the output focused.</p>
+
+      <h3>Report: from data to decision</h3>
+      <p>The report reads top-down, like a briefing. It opens with the answer, the headline and overall sentiment. Then it shows the evidence: channels, top content, each competitor's themes, and sentiment over time. It ends with what the data means for the client, as opportunities, risks and three recommended plays for the next cycle.</p>
+      <p>Each play has a type, such as counter-program, keyword poaching or monitor only, so a team can see at a glance whether to act now or wait.</p>
+    </div>
+  </section>
+
+  <!-- 04 -->
+  <section aria-labelledby="sol">
+    <div class="sec-head"><span class="label">04 · The solution</span><h2 id="sol" class="col">Set it up once, get a brief every cycle</h2></div>
+
+    <div class="prose col">
+      <h3>Creating the agent</h3>
+      <p>Pick a category, choose up to three brands from the catalog, select the channels, and optionally tell the agent what to focus on. Then set the cadence and who receives the report. Review, approve, and the agent is live.</p>
+    </div>
+    <figure>
+      <div class="frame"><video src="media/agent/setup.mp4" poster="media/agent/setup.jpg" autoplay muted loop playsinline preload="metadata" aria-label="Agent setup in Vee Hive: pick the Wet/Dry Vacuums category, add Dyson, Shark and Bissell from the catalog, select TikTok, Instagram and Facebook, add a focus note, choose weekly cadence, add a recipient, review and approve, the agent is active"></video></div>
+      <figcaption><b>Agent setup.</b> Scope, cadence, review. The same rhythm as creating an alert.</figcaption>
+    </figure>
+
+    <div class="prose col">
+      <h3>The report the agent sends</h3>
+      <p>A sample report for the skincare category, tracking three competitor brands over 30 days.</p>
+    </div>
+    <figure>
+      <div class="frame"><img src="media/agent/report-top.jpg" alt="Report header: Competitor Social Digest for Anua, Beauty of Joseon and Medicube, a one-paragraph summary, 85% net positive sentiment, 259 posts and 878.7K engagement"></div>
+      <figcaption><b>The answer first.</b> A plain-language summary, net sentiment, and volume against the previous period.</figcaption>
+    </figure>
+    <figure>
+      <div class="frame"><img src="media/agent/report-activity.jpg" alt="Activity summary with posts and engagement by channel, a hashtag chart of reach against effort, and four top content cards with engagement numbers"></div>
+      <figcaption><b>The evidence.</b> Where the activity happens, which hashtags earn reach for their effort, and the posts that performed best.</figcaption>
+    </figure>
+    <div class="grid2">
+      <figure>
+        <div class="frame"><img src="media/agent/report-themes.jpg" alt="Themes and campaigns per competitor: Medicube always-on, Anua sustained theme, Beauty of Joseon no campaign"></div>
+        <figcaption><b>Per competitor.</b> Each brand's theme, labeled by type: always-on, sustained, or none.</figcaption>
+      </figure>
+      <figure>
+        <div class="frame"><img src="media/agent/report-sentiment.jpg" alt="Sentiment range for the month with low, net and high points, and hashtag-level sentiment"></div>
+        <figcaption><b>Sentiment.</b> The month's range on one line, with the reason behind the low and the high.</figcaption>
+      </figure>
+    </div>
+    <figure>
+      <div class="frame"><img src="media/agent/report-actions.jpg" alt="Opportunity and risk cards, two whitespace and one forming risk, followed by three recommended plays: counter-program, keyword poaching and monitor only"></div>
+      <figcaption><b>What to do next.</b> Opportunities and risks for the client, then three plays for the coming cycle.</figcaption>
+    </figure>
+  </section>
+
+  <!-- 05 -->
+  <section aria-labelledby="imp">
+    <div class="sec-head"><span class="label">05 · The impact</span><h2 id="imp" class="col">Early, and already in use</h2></div>
+    <div class="tbl-scroll">
+      <table>
+        <thead><tr><th>Result</th><th>Evidence</th></tr></thead>
+        <tbody>
+          <tr><td><b>Shipped</b>: clients create their own competitor agents in three steps</td><td>Live in Vee Hive</td></tr>
+          <tr><td>Early activity since launch looks strong</td><td>Product usage</td></tr>
+          <tr><td>Competitor reports now live inside Revuze, instead of being rebuilt by hand in slides every cycle</td><td>Report template</td></tr>
+          <tr><td>The setup reuses the Alerts pattern, so clients already know how to create an agent</td><td>Shared flow and Hubs components</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="prose col">
+      <h3>What I learned</h3>
+      <p>With AI agents, design work sits at both ends. At the start, the job is to make setup feel simple enough that people trust the agent with the task. At the end, the job is to shape what the agent produces, so it reads like advice from an analyst, not a data dump.</p>
+    </div>
+  </section>
+<nav class="pager" aria-label="More case studies"><a href="prototype-portal.html"><span class="label">← Previous · Revuze</span><b>One working prototype for research, clients and developers</b></a><a class="next" href="ai-assistant-trial.html"><span class="label">Next · Centrical →</span><b>Designing a free trial for users who can't buy</b></a></nav><footer class="foot"><span>Nitzan Levy · Lead Product Designer</span><span>Product images belong to their companies.</span></footer>
+</div>
+
+<script>
+(function(){
+  try{
+    if(window.matchMedia('(prefers-reduced-motion: reduce)').matches){
+      document.querySelectorAll('video').forEach(function(v){v.removeAttribute('autoplay');v.pause();v.controls=true;});
+    }
+  }catch(e){}
+})();
+</script>
+
+</body></html>

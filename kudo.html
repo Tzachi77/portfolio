@@ -1,0 +1,167 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>KUDO multi-surface · Nitzan Levy</title>
+<meta name="description" content="Four separately built surfaces, from a Microsoft Teams widget to mobile web, unified around one core pattern for live interpretation and captions.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="site.css">
+<script src="site.js" defer></script>
+</head><body>
+<div class="wrap">
+  <nav class="nav" aria-label="Main"><a class="home" href="index.html">Nitzan Levy<span class="long"> · Lead Product Designer</span></a><ul><li><a href="index.html#work" aria-current="page">Work</a></li><li><a href="resume.html">Resume</a></li></ul></nav>
+
+  <div class="hero">
+    <div class="kicker"><span class="label">Case 04 / 04</span><span class="label">KUDO · Multilingual meetings · 2023</span></div>
+    <h1>One interpretation experience, wherever the meeting happens</h1>
+    <p class="lede">KUDO lets people speak their own language in a meeting while everyone else hears or reads it in theirs. As the only designer, I turned four separate surfaces into one experience: the web platform, the video platform, the Microsoft Teams app and the mobile app.</p>
+    <dl class="facts">
+      <div><dt class="label">Role</dt><dd>Sole product designer</dd></div>
+      <div><dt class="label">Surfaces</dt><dd>Web platform, video platform, MS Teams app, mobile web</dd></div>
+      <div><dt class="label">Users</dt><dd>Attendees, interpreters, meeting organizers</dd></div>
+      <div><dt class="label">Year</dt><dd>2023</dd></div>
+    </dl>
+  </div>
+
+  <!-- 01 -->
+  <section aria-labelledby="ch">
+    <div class="sec-head"><span class="label">01 · The challenge</span><h2 id="ch" class="col">The same task, built four different ways</h2></div>
+    <div class="prose col">
+      <p>On every KUDO surface, the user does the same thing: choose a language, then listen to the interpretation or read the captions. But each surface had been built on its own, with its own controls and layout. A user who joined from Teams on Monday and from their phone on Tuesday met two different products.</p>
+      <p>Research on each surface kept finding the same problems:</p>
+    </div>
+    <div class="outcomes">
+      <div><span class="label">Clarity</span><p>Cluttered interfaces, inconsistent visual cues, and no clear sign that a meeting was live.</p></div>
+      <div><span class="label">Language</span><p>Language selection was complex, and switching between audio and captions was confusing.</p></div>
+      <div><span class="label">Captions</span><p>Subtitles sat in small, badly placed windows, with accessibility issues on top.</p></div>
+    </div>
+    <div class="prose col">
+      <p>Booking a meeting had its own gap. AI interpretation works better when it knows the context, but organizers had no way to tell it who would attend, which languages they speak, or what their titles are.</p>
+    </div>
+  </section>
+
+  <!-- 02 -->
+  <section aria-labelledby="role">
+    <div class="sec-head"><span class="label">02 · My role</span><h2 id="role" class="col">One designer, four surfaces</h2></div>
+    <div class="two">
+      <div class="prose col">
+        <ul class="plain">
+          <li>Research: interviews with clients, meeting participants and interpreters, competitor analysis, and usability tests built around real tasks.</li>
+          <li>User flows, wireframes and prototypes for every surface.</li>
+          <li>Final UI and the handoff to development, after usability testing confirmed each fix.</li>
+        </ul>
+      </div>
+      <aside class="rail">
+        <div><b>Constraint</b>The Teams app is a widget inside Teams. Most of the screen belongs to Microsoft and can't be used.</div>
+        <div><b>Constraint</b>Mobile and tablet users join from a browser, often mid-meeting, on a small screen.</div>
+        <div><b>Personas</b>The interpreter needs a stable platform and clear audio. The corporate client needs easy scheduling. The platform operator needs monitoring tools.</div>
+      </aside>
+    </div>
+  </section>
+
+  <!-- 03 -->
+  <section aria-labelledby="think">
+    <div class="sec-head"><span class="label">03 · The thinking</span><h2 id="think" class="col">Solve the hardest surface first, then carry it everywhere</h2></div>
+    <div class="prose col">
+      <p>I started with the Teams app, because it had the least room. Sketching for it was different from a normal project: the widget sits beside Teams' own video grid, so every pixel had to earn its place.</p>
+      <p>The old widget spent its biggest area on language selection, and squeezed the captions, which people actually watch, into a small window at the bottom. I flipped that: captions get the panel, and language choice moves to a quick menu.</p>
+    </div>
+    <div class="grid2">
+      <figure>
+        <div class="frame"><img src="media/kudo/teams-old.jpg" alt="Old KUDO Teams widget: a large language selection area and a small captions window"></div>
+        <figcaption><b>Before.</b> Large area for language and caption selection, small caption window.</figcaption>
+      </figure>
+      <figure>
+        <div class="frame"><img src="media/kudo/teams-final.jpg" alt="New KUDO Teams widget: full-height caption panel with speaker names, smart focus, scroll and full-screen option"></div>
+        <figcaption><b>After.</b> The main area now shows captions, with speaker names, smart focus on the latest speaker, scroll and full screen.</figcaption>
+      </figure>
+    </div>
+    <div class="prose col">
+      <p>After two design rounds, I tested a prototype with users to confirm every pain point was solved. Then came the key decision. In my words from that time: <em>"Following our work on the MS Teams project, we recognized the opportunity to create a cohesive user flow across our different products."</em> The pattern that worked in the smallest space became the core of every other surface.</p>
+    </div>
+  </section>
+
+  <!-- 04 -->
+  <section aria-labelledby="sol">
+    <div class="sec-head"><span class="label">04 · The solution</span><h2 id="sol" class="col">One core pattern, adapted to each surface</h2></div>
+    <div class="prose col">
+      <p>The shared pattern has seven parts: a full caption panel, icons instead of text where possible, a quick-select language menu, automatic detection of the user's language, a settings panel, high-contrast modes, and smart focus that highlights the most relevant information.</p>
+
+      <h3>Mobile web</h3>
+      <p>The old flow made users pick a language from a long list before they could see anything. The new one opens on the conversation itself, with the meeting name, a live indicator and a language menu one tap away.</p>
+    </div>
+    <div class="grid2">
+      <figure>
+        <div class="frame"><img src="media/kudo/mobile-old.jpg" alt="Old KUDO mobile screens: language list, audio toggle, caption text, and meeting not started"></div>
+        <figcaption><b>Before.</b> A long language list first, captions only screens later.</figcaption>
+      </figure>
+      <figure>
+        <div class="frame"><img src="media/kudo/mobile-final.jpg" alt="New KUDO mobile screen: meeting name, live animation, speaker initials and names, focused latest message, scrollable language menu"></div>
+        <figcaption><b>After.</b> Meeting name, live animation, speaker names and smart focus, the same pattern as Teams.</figcaption>
+      </figure>
+    </div>
+
+    <div class="prose col">
+      <h3>Video platform</h3>
+      <p>KUDO's own meeting platform also runs with live human interpreters, so it had to serve attendees and interpreters at once. I cleared the interface, moved every action into one bar, and put the language menu next to the controls people already use.</p>
+    </div>
+    <div class="grid2">
+      <figure>
+        <div class="frame"><img src="media/kudo/video-old.jpg" alt="Old KUDO video platform with a large controls row and separate side icons"></div>
+        <figcaption><b>Before.</b> Controls split between a bottom row and a side rail.</figcaption>
+      </figure>
+      <figure>
+        <div class="frame"><img src="media/kudo/video-final.jpg" alt="New KUDO video platform: clutter-free view, status indicators, participant panel with search, language menu and a single nav bar"></div>
+        <figcaption><b>After.</b> One nav bar for all actions, the language menu beside it, and a participant panel with search.</figcaption>
+      </figure>
+    </div>
+    <figure>
+      <div class="frame"><img src="media/kudo/video-prejoin.jpg" alt="KUDO pre-join screen with a personal welcome, media settings and separate selectors for interpretation and caption language"></div>
+      <figcaption><b>Before joining.</b> Separate, clearly labeled selectors for interpretation language and caption language, so users set both before the meeting starts.</figcaption>
+    </figure>
+
+    <div class="prose col">
+      <h3>Web platform: booking an AI meeting</h3>
+      <p>On the web platform, the dashboard is built around one goal: book your first AI meeting in three steps. After the first booking, the three steps are replaced by usage stats.</p>
+    </div>
+    <figure>
+      <div class="frame"><img src="media/kudo/saas-dashboard.jpg" alt="KUDO web dashboard: personal welcome, book a meeting in three steps, interactive demo, live demo registration and expert contact"></div>
+      <figcaption><b>Dashboard.</b> A personal welcome, a clear call to book a meeting, an interactive demo, and an easy way to reach a person.</figcaption>
+    </figure>
+    <div class="prose col">
+      <p>The booking flow is where interpretation quality is decided. Organizers pick the source and target languages and an AI voice. Then, in the customization step, they tell the AI who will be in the meeting, which languages each person speaks, and their titles. With that context, the AI interprets each speaker correctly from the first minute.</p>
+    </div>
+    <div class="grid2">
+      <figure>
+        <div class="frame"><img src="media/kudo/saas-booking.jpg" alt="KUDO booking step: meeting details, source and target language selection powered by KUDO AI, and AI voice choice"></div>
+        <figcaption><b>Meeting details.</b> Languages and AI voice, in a three-step flow.</figcaption>
+      </figure>
+      <figure>
+        <div class="frame"><img src="media/kudo/saas-congrats.jpg" alt="KUDO booking confirmation with a customization box for meeting context and a congratulations message"></div>
+        <figcaption><b>Customization and confirmation.</b> Context about attendees, their languages and titles, then a clear next step.</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <!-- 05 -->
+  <section aria-labelledby="imp">
+    <div class="sec-head"><span class="label">05 · The impact</span><h2 id="imp" class="col">What improved</h2></div>
+    <div class="tbl-scroll">
+      <table>
+        <thead><tr><th>Result</th><th>Evidence</th></tr></thead>
+        <tbody>
+          <tr><td><b>One interpretation experience across four surfaces</b>, built from a single core pattern</td><td>Final designs for Teams, mobile, video and web</td></tr>
+          <tr><td>Every pain point found in research addressed and confirmed before handoff</td><td>Usability testing on prototypes</td></tr>
+          <tr><td>Captions became the main content in the Teams app, not a small side window</td><td>Before / after redesign</td></tr>
+          <tr><td>AI meetings booked with context about attendees, languages and titles</td><td>New customization step in booking</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="prose col">
+      <h3>What I learned</h3>
+      <p>Designing for the most constrained surface first gave me a pattern that fit everywhere else. And with AI products, a lot of the experience happens before the AI runs: the context users give it decides how good the result will be.</p>
+    </div>
+  </section>
+<nav class="pager" aria-label="More case studies"><a href="ai-assistant-trial.html"><span class="label">← Previous · Centrical</span><b>Designing a free trial for users who can't buy</b></a><a class="next" href="prototype-portal.html"><span class="label">Back to the first case · Revuze →</span><b>One working prototype for research, clients and developers</b></a></nav><footer class="foot"><span>Nitzan Levy · Lead Product Designer</span><span>Product images belong to their companies.</span></footer>
+</div>
+
+</body></html>
