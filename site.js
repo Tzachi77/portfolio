@@ -382,8 +382,8 @@
   document.addEventListener('fullscreenchange', function () { if (!document.fullscreenElement) v.controls = false; });
   /* chapters */
   var chips = document.querySelectorAll('.reel-chap button'), bar = document.querySelector('.reel-prog i');
-  var segStart = [0, 2.1, 5.4, 7.7, 10.8, 13.7, 15.8, 17.9, 20.6, 22.7, 24.8, 27.5, 29.6, 31.9];
-  var segChip  = [0, 1, 2, 3, 3, 4, 5, 3, 6, 7, 3, 7, 3, 6];
+  var segStart = [0, 2.1, 5.7, 9.0, 11.3, 14.4, 17.3, 21.0, 23.1, 25.2, 27.9, 31.2, 33.3, 35.4, 38.5, 41.2, 43.3, 46.2, 48.5];
+  var segChip  = [0, 1, 2, 3, 4, 4, 1, 5, 6, 4, 7, 8, 9, 7, 4, 9, 7, 4, 8];
   chips.forEach(function (c) { c.addEventListener('click', function () {
     v.currentTime = +c.getAttribute('data-t'); var p = v.play(); if (p && p.catch) p.catch(function () {}); }); });
   var cur = -2;
