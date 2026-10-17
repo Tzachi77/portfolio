@@ -546,3 +546,18 @@ figure.details{gap:.9rem}
 .js .details.rv .dt{opacity:0;transform:translateY(12px);transition:opacity .5s ease,transform .55s cubic-bezier(.2,.7,.2,1)}
 .js .details.rv.in .dt{opacity:1;transform:none}
 .js .details.rv.in .dt:nth-child(2){transition-delay:.12s}.js .details.rv.in .dt:nth-child(3){transition-delay:.24s}
+
+/* case cards: calmer hover, loops in a clean frame */
+.case .thumb{transform:none!important;box-shadow:none}
+.case:hover .thumb{box-shadow:0 20px 40px -26px rgba(20,20,40,.35)}
+.case:hover .thumb .win{transform:translateY(-4px)}
+.case .thumb .win{transition:transform .5s cubic-bezier(.2,.7,.2,1)}
+.case .txt h2{background:linear-gradient(var(--mark),var(--mark)) no-repeat 0 100%/0% 3px;transition:background-size .5s cubic-bezier(.2,.7,.2,1);padding-bottom:.15em;width:fit-content;max-width:100%}
+.case:hover .txt h2,.case:focus-visible .txt h2{background-size:100% 3px}
+.reel-prog{height:2px;background:var(--rule);border-radius:2px;overflow:hidden}
+.reel-prog i{display:block;height:100%;width:0;background:var(--violet)}
+.reel-chap{display:flex;flex-wrap:wrap;gap:.45rem}
+.reel-chap button{all:unset;cursor:pointer;font:500 .72rem/1 var(--f-mono);letter-spacing:.04em;padding:.55em .8em;border:1px solid var(--rule);border-radius:999px;color:var(--ink-2);transition:background .25s,color .25s,border-color .25s}
+.reel-chap button:hover{border-color:var(--ink);color:var(--ink)}
+.reel-chap button.on{background:var(--ink);color:var(--paper);border-color:var(--ink)}
+.reel-chap button:focus-visible{outline:2px solid var(--violet);outline-offset:2px}

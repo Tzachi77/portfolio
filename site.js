@@ -40,25 +40,16 @@
     });
   }
 
-  /* ---------- case cards: hover media ---------- */
-  document.querySelectorAll('.case .thumb[data-hover]').forEach(function (th) {
-    var spec = th.getAttribute('data-hover').split(':'), kind = spec[0], src = th.getAttribute('data-base') + spec[1];
-    var card = th.closest('.case'), el;
-    if (kind === 'video') {
-      el = document.createElement('video');
-      el.muted = true; el.loop = true; el.playsInline = true; el.preload = 'none'; el.src = src;
-      el.setAttribute('aria-hidden', 'true');
-      var tag = mkTag('Hover to play', 'Live prototype');
-      card.addEventListener('mouseenter', function () { if (!reduce) { var p = el.play(); if (p && p.catch) p.catch(function () {}); } });
-      card.addEventListener('mouseleave', function () { el.pause(); });
-    } else {
-      el = document.createElement('img'); el.src = src; el.alt = ''; el.loading = 'lazy';
-      var tg = (th.getAttribute('data-tags') || 'Before|After').split('|'); var tag = mkTag(tg[0], tg[1]);
-    }
-    el.className = 'alt';
-    (th.querySelector('.scr') || th).appendChild(el); th.appendChild(tag);
-  });
-  function mkTag(b, a) { var s = document.createElement('span'); s.className = 'tag'; s.innerHTML = '<span class="b">' + b + '</span><span class="a">' + a + '</span>'; return s; }
+  /* ---------- case cards: quiet auto-playing loops ---------- */
+  (function () {
+    var vids = document.querySelectorAll('.case video.loop'); if (!vids.length) return;
+    if (reduce || !('IntersectionObserver' in window)) return;   /* poster image only */
+    var io = new IntersectionObserver(function (es) {
+      es.forEach(function (e) { var v = e.target;
+        if (e.isIntersecting) { var p = v.play(); if (p && p.catch) p.catch(function () {}); } else v.pause(); });
+    }, { threshold: .35 });
+    vids.forEach(function (v) { io.observe(v); });
+  })();
 
   /* ---------- before / after toggles (any grid of two figures captioned Before. / After.) ---------- */
   document.querySelectorAll('.grid2').forEach(function (g, n) {
@@ -254,16 +245,6 @@
 
   if (reduce || !fine) return;
 
-  /* case cards: tilt toward the pointer */
-  document.querySelectorAll('.case').forEach(function (card) {
-    var th = card.querySelector('.thumb');
-    card.addEventListener('mousemove', function (e) {
-      var r = th.getBoundingClientRect(), x = (e.clientX - r.left) / r.width - .5, y = (e.clientY - r.top) / r.height - .5;
-      th.style.transform = 'perspective(900px) rotateY(' + (x * 7) + 'deg) rotateX(' + (-y * 7) + 'deg) translateZ(0)';
-    });
-    card.addEventListener('mouseleave', function () { th.style.transform = ''; });
-  });
-
   /* magnetic buttons */
   document.querySelectorAll('.btn').forEach(function (b) {
     b.addEventListener('mousemove', function (e) {
@@ -399,6 +380,18 @@
     if (fs) { try { fs.call(v); } catch (e) {} }
   });
   document.addEventListener('fullscreenchange', function () { if (!document.fullscreenElement) v.controls = false; });
+  /* chapters */
+  var chips = document.querySelectorAll('.reel-chap button'), bar = document.querySelector('.reel-prog i');
+  var segStart = [0, 2.1, 5.4, 7.7, 10.8, 13.7, 15.8, 17.9, 20.6, 22.7, 24.8, 27.5, 29.6, 31.9];
+  var segChip  = [0, 1, 2, 3, 3, 4, 5, 3, 6, 7, 3, 7, 3, 6];
+  chips.forEach(function (c) { c.addEventListener('click', function () {
+    v.currentTime = +c.getAttribute('data-t'); var p = v.play(); if (p && p.catch) p.catch(function () {}); }); });
+  var cur = -2;
+  v.addEventListener('timeupdate', function () {
+    var t = v.currentTime, k = 0; for (var i = 0; i < segStart.length; i++) if (t >= segStart[i]) k = i;
+    var ci = segChip[k]; if (ci !== cur) { cur = ci; chips.forEach(function (c, n) { c.classList.toggle('on', n === ci); }); }
+    if (bar && v.duration) bar.style.width = (t / v.duration * 100) + '%';
+  });
 })();
 
 /* impact numbers: count up when the band scrolls into view */
