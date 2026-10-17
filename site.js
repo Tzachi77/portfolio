@@ -438,3 +438,19 @@
     document.addEventListener('click', function (e) { if (!fr.contains(e.target)) spots.forEach(function (o) { o.classList.remove('open'); }); });
   });
 })();
+
+/* PDF download inside the Claude viewer (plain links are blocked there); elsewhere the normal link works */
+(function () {
+  if (!window.claude || typeof window.claude.use !== 'function') return;
+  window.claude.use('downloads').then(function (dl) {
+    if (!dl) return;
+    document.querySelectorAll('a[href$=".pdf"]').forEach(function (a) {
+      a.addEventListener('click', function (e) {
+        e.preventDefault();
+        fetch(a.getAttribute('href')).then(function (r) { return r.blob(); }).then(function (blob) {
+          return dl.save({ filename: a.getAttribute('download') || 'Nitzan-Levy-Resume.pdf', data: blob });
+        }).catch(function () {});
+      });
+    });
+  }).catch(function () {});
+})();

@@ -494,7 +494,7 @@ figure.raw:hover .frame{opacity:1;filter:none}
 
 /* ================= impact numbers ================= */
 .stats{display:grid;gap:1.6rem;padding-block:4.5rem 0}
-.stat-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:1px;background:var(--rule);border:1px solid var(--rule);border-radius:12px;overflow:hidden}
+.stat-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1px;background:var(--rule);border:1px solid var(--rule);border-radius:12px;overflow:hidden}
 .stat{background:var(--paper);padding:1.6rem 1.4rem 1.4rem;display:grid;gap:.6rem;align-content:start;min-width:0;transition:background .3s}
 .stat:hover{background:var(--sheet)}
 .stat .n{font:700 clamp(2.6rem,5vw,3.8rem)/1 var(--f-display);font-variant-numeric:tabular-nums;letter-spacing:-.02em;display:flex;align-items:baseline;gap:.1em;white-space:nowrap}
@@ -504,7 +504,7 @@ figure.raw:hover .frame{opacity:1;filter:none}
 .stat:first-child .n{color:var(--ink)}
 .stat:first-child{background:var(--mark);}
 .stat:first-child p,.stat:first-child .label{color:var(--mark-ink)}
-@media (max-width:900px){.stat-grid{grid-template-columns:1fr 1fr}}
+@media (max-width:900px){.stat-grid{grid-template-columns:1fr}}
 @media (max-width:480px){.stat-grid{grid-template-columns:1fr}}
 .js .stats.counting .arr{animation:arrSlide 1.2s cubic-bezier(.2,.7,.2,1) both .4s}
 @keyframes arrSlide{0%{opacity:0;transform:translateX(-14px)}100%{opacity:1;transform:none}}
