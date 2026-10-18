@@ -559,6 +559,12 @@ figure.details{gap:.9rem}
 .reel-chap button:hover{border-color:var(--ink);color:var(--ink)}
 .reel-chap button.on{background:var(--ink);color:var(--paper);border-color:var(--ink)}
 .reel-chap button:focus-visible{outline:2px solid var(--violet);outline-offset:2px}
+
+/* hotspot notes may extend past the frame (small screens): round the image, not the frame */
+.frame.hs-wrap{overflow:visible}
+.frame.hs-wrap>img{border-radius:9px;display:block}
+.hs-wrap.hs-active{z-index:20}
+@media (max-width:600px){.hs-note{max-width:min(180px,64vw)}}
 /* standalone resume extras */
 .js .cv-head h1 .ch{display:inline-block;opacity:0;transform:translateY(.55em) rotate(3deg);transition:opacity .6s cubic-bezier(.2,.7,.2,1),transform .7s cubic-bezier(.2,.7,.2,1);transition-delay:calc(var(--i)*45ms)}
 .js .cv-head.in h1 .ch{opacity:1;transform:none}

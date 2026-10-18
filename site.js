@@ -426,9 +426,10 @@
         e.stopPropagation(); var open = !s.classList.contains('open');
         spots.forEach(function (o) { o.classList.remove('open'); o.querySelector('button').setAttribute('aria-expanded', 'false'); });
         if (open) { s.classList.add('open'); b.setAttribute('aria-expanded', 'true'); }
+        fr.classList.toggle('hs-active', open);
       });
     });
-    document.addEventListener('click', function (e) { if (!fr.contains(e.target)) spots.forEach(function (o) { o.classList.remove('open'); }); });
+    document.addEventListener('click', function (e) { if (!fr.contains(e.target)) { spots.forEach(function (o) { o.classList.remove('open'); }); fr.classList.remove('hs-active'); } });
   });
 })();
 
